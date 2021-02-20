@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/contactsFragment">
+
+
+    <dialog
+        android:id="@+id/errorDialog"
+        android:name="ru.vladimir.tilikov.roomdaomessenger.ui.additional.ErrorDialog"
+        android:label="ErrorDialog"
+        tools:layout="@layout/dialog_error" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="ru.vladimir.tilikov.roomdaomessenger.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_contactsFragment"
+            app:destination="@id/contactsFragment"
+            app:popUpTo="@id/contactsFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/messagesFragment"
+        android:name="ru.vladimir.tilikov.roomdaomessenger.ui.messages.MessagesFragment"
+        android:label="MessagesFragment"
+        tools:layout="@layout/fragment_messages">
+        <argument
+            android:name="contact"
+            app:argType="ru.vladimir.tilikov.roomdaomessenger.data.models.Contact" />
+        <action
+            android:id="@+id/action_messagesFragment_to_imageListFragment"
+            app:destination="@id/imageListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="ru.vladimir.tilikov.roomdaomessenger.ui.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/contactsFragment"
+        android:name="ru.vladimir.tilikov.roomdaomessenger.ui.contacts.list.ContactListFragment"
+        android:label="ContactsFragment"
+        tools:layout="@layout/fragment_contact_list">
+        <action
+            android:id="@+id/action_contactsFragment_to_messagesFragment"
+            app:destination="@id/messagesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_contactsFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_contactsFragment_to_contactAddFragment"
+            app:destination="@id/contactAddFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactAddFragment"
+        android:name="ru.vladimir.tilikov.roomdaomessenger.ui.contacts.add.ContactAddFragment"
+        android:label="ContactAddFragment"
+        tools:layout="@layout/fragment_contact_add" />
+    <fragment
+        android:id="@+id/registrationDialog"
+        android:name="ru.vladimir.tilikov.roomdaomessenger.ui.registration.RegistrationDialog"
+        android:label="RegistrationDialog"
+        tools:layout="@layout/dialog_registration" />
+    <fragment
+        android:id="@+id/imageListFragment"
+        android:name="ru.vladimir.tilikov.roomdaomessenger.ui.images.ImageListFragment"
+        android:label="ImageListFragment"
+        tools:layout="@layout/fragment_image_list">
+        <argument
+            android:name="contact"
+            app:argType="ru.vladimir.tilikov.roomdaomessenger.data.models.Contact" />
+    </fragment>
+
+</navigation>

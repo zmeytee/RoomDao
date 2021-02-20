@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom"
+    android:padding="16dp">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabMenuSwitcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_margin="8dp"
+        android:contentDescription="@string/menu"
+        android:src="@drawable/ic_menu_open"
+        app:backgroundTint="@color/purple_500"
+        app:tint="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/fabMenuSwitcher"
+        android:layout_alignEnd="@id/fabMenuSwitcher"
+        android:layout_margin="8dp"
+        android:contentDescription="@string/add_contact"
+        android:src="@drawable/ic_add"
+        android:visibility="invisible"
+        app:backgroundTint="@color/purple_500"
+        app:fabSize="mini"
+        app:tint="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/fabMenuSwitcher"
+        android:layout_margin="8dp"
+        android:layout_toStartOf="@id/fabMenuSwitcher"
+        android:contentDescription="@string/log_out"
+        android:src="@drawable/ic_exit"
+        android:visibility="invisible"
+        app:backgroundTint="@color/purple_500"
+        app:fabSize="mini"
+        app:tint="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/fabLogout"
+        android:layout_alignTop="@id/fabAddContact"
+        android:layout_margin="8dp"
+        android:contentDescription="@string/profile"
+        android:src="@drawable/ic_person"
+        android:visibility="invisible"
+        app:backgroundTint="@color/purple_500"
+        app:fabSize="mini"
+        app:tint="@color/white" />
+</RelativeLayout>
